@@ -1,4 +1,4 @@
-
+/*
 let fun = () => {
    for (let i = 0; i < car.length; i++) {
       console.log(car[i]);
@@ -67,3 +67,109 @@ while (!exit) {
       }
    }
 }
+*/
+
+/*
+const student_1 = { name: "kolya", age: 22 };
+const student_2 = student_1;
+
+student_1.age = 43;
+student_2.name = "dima";
+console.log(student_1);
+console.log(student_2);
+*/
+
+/*
+const student_1 = { name: "kolya", age: 22 };
+const student_3 = { student: true };
+const student_2 = Object.assign({}, student_1, student_3, { number: "+3806575345" }, { age: 44 });
+
+student_1.age = 43;
+student_2.name = "dima";
+console.log(student_1);
+console.log(student_2);
+
+const product = { type: "milk", price: 25, cal: 256 };
+const product_2 = { type: "bread", price: 34, cal: 345 };
+const shop = Object.assign({}, product, product_2);
+console.log(shop);
+*/
+
+/*
+const student_1 = {
+   name: "kolya",
+   age: 22,
+   company: {
+      title: "Microsoft",
+      sallary: 5000
+   }
+};
+
+const student_2 = Object.assign({}, student_1);
+
+student_2.name = "Dima";
+student_2.company.title = "Google";
+
+console.log(student_1);
+console.log(student_2)
+*/
+
+/*
+const student_1 = {
+   name: "kolya",
+   age: 22,
+   company: {
+      title: "Microsoft",
+      sallary: 5000
+   }
+};
+
+const student_2 = { ...student_1, name: "timure" };
+
+console.log(student_1);
+console.log(student_2);
+*/
+
+/*
+const avto = { model_1: "audi", color_1: "red", price_1: 120000 };
+const avto_2 = { model: "audi", color: "red", price: 1202000 };
+
+if (avto.model_1 === avto_2.model && avto.color_1 === avto_2.color && avto.price_1 === avto_2.price) {
+   console.log("True");
+} else {
+   console.log("False");
+}
+*/
+
+/*
+const user = { name: "dima", age: 23 };
+
+if (user.name !== undefined) {
+   console.log("true");
+} else {
+   console.log("false")
+}
+
+if ("name" in user) {
+   console.log("True");
+} else {
+   console.log("False");
+}
+
+if (user.hasOwnProperty("qwe")) {
+   console.log("True");
+} else {
+   console.log("False");
+}
+*/
+
+/*
+const user = { name: "dima", age: 23 };
+for (let key in user) {
+   console.log(user[key])
+}
+
+for (const item of Object.entries(user)) {
+   console.log(`${item[0]}: ${item[1]}. `);
+}
+*/
