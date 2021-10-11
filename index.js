@@ -5,7 +5,7 @@ let fun = () => {
    }
 }
 
-let car = [" "];
+let car = [];
 console.log("1 - добавить новый авто");
 console.log("2 - посмотреть список авто");
 console.log("3 - измененить их показатели");
@@ -19,7 +19,7 @@ while (!exit) {
       case 1: {
          name = prompt("имя авто: ");
          speed = parseInt(prompt("скорость: "));
-         car[car.length] = { Name: name, Speed: speed }
+         car[car.length] = { Name: name, Speed: speed, Meter: 0 }
          console.log(1);
          break;
       }
@@ -40,11 +40,23 @@ while (!exit) {
          break;
       }
       case 4: {
-         del();
+         name = prompt("Введите имя авто для расчета пути торможения");
+         for (item of car) {
+            if (item.Name === name) {
+               result = (item.Speed / 10) * 3;
+               resultOne = (item.Speed / 10) * (item.Speed / 10);
+               item.Meter += result + resultOne;
+            }
+         }
          console.log(4);
          break;
       }
       case 5: {
+         for (item of car) {
+            result = (item.Speed / 10) * 3;
+            resultOne = (item.Speed / 10) * (item.Speed / 10);
+            item.Meter += result + resultOne;
+         }
          console.log(5);
          break;
       }
