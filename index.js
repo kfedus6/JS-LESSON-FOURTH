@@ -173,3 +173,72 @@ for (const item of Object.entries(user)) {
    console.log(`${item[0]}: ${item[1]}. `);
 }
 */
+
+let google = { Google: "американська транснаціональна корпорація, в складі холдингу Alphabet, що інвестує в інтернет-пошук, хмарні обчислення і рекламні технології." };
+let google_1 = { Google: "американська транснаціональна корпорація, в складі холдингу Alphabet, що інвестує в інтернет-пошук, хмарні обчислення і рекламні технології." };
+let google_2 = { Google: "американская транснациональная корпорация, в составе холдинга Alphabet, инвестирующая в интернет-поиск, облачные вычисления и рекламные технологии." };
+let google_3 = { Google: "an American multinational corporation, part of the Alphabet holding company, which invests in Internet search, cloud computing and advertising technologies." };
+let google_4 = { Google: "amerykańska międzynarodowa korporacja, będąca częścią holdingu Alphabet, inwestująca w wyszukiwarkę internetową, przetwarzanie w chmurze i technologie reklamowe." };
+
+let result = () => {
+   for (let key of Object.entries(google)) {
+      console.log(`${key[0]}: ${key[1]}`)
+   }
+}
+
+let result_1 = () => {
+   google = Object.assign({}, google_1);
+}
+
+let result_2 = () => {
+   google = Object.assign({}, google_2);
+}
+
+let result_3 = () => {
+   google = { ...google_3 };
+}
+
+let result_4 = () => {
+   google = { ...google_4 };
+}
+
+
+console.log("1 - посмотреть");
+console.log("2 - россійскікий");
+console.log("3 - англійский");
+console.log("4 - польський");
+console.log("5 - український");
+console.log("6 - выйти")
+
+let exit = false;
+
+while (!exit) {
+   let menu = parseInt(prompt("Enter:"));
+   switch (menu) {
+      case 1: {
+         result();
+         break;
+      }
+      case 2: {
+         result_2();
+         break;
+      }
+      case 3: {
+         result_3();
+         break;
+      }
+      case 4: {
+         result_4();
+         break;
+      }
+      case 5: {
+         result_1();
+         break;
+      }
+      case 6: {
+         exit = true;
+         console.log("ви вийшли");
+         break;
+      }
+   }
+}
