@@ -169,11 +169,14 @@ for (let key in user) {
    console.log(user[key])
 }
 
+
 for (const item of Object.entries(user)) {
    console.log(`${item[0]}: ${item[1]}. `);
 }
 */
 
+// ДЗ
+/*
 let google = { Google: "американська транснаціональна корпорація, в складі холдингу Alphabet, що інвестує в інтернет-пошук, хмарні обчислення і рекламні технології." };
 let google_1 = { Google: "американська транснаціональна корпорація, в складі холдингу Alphabet, що інвестує в інтернет-пошук, хмарні обчислення і рекламні технології." };
 let google_2 = { Google: "американская транснациональная корпорация, в составе холдинга Alphabet, инвестирующая в интернет-поиск, облачные вычисления и рекламные технологии." };
@@ -190,15 +193,15 @@ let result_1 = () => {
    google = Object.assign({}, google_1);
 }
 
-let result_2 = () => {
+function result_2() {
    google = Object.assign({}, google_2);
 }
 
-let result_3 = () => {
+function result_3() {
    google = { ...google_3 };
 }
 
-let result_4 = () => {
+function result_4() {
    google = { ...google_4 };
 }
 
@@ -242,3 +245,200 @@ while (!exit) {
       }
    }
 }
+*/
+
+/*
+let dict = [{ rus: "Привет", eng: "Hello" }, { rus: "Ручка", eng: "Pen" }]
+
+word = "Привет";
+
+for (let i = 0; i < dict.length; i++) {
+   if (word === dict[i].rus) {
+      console.log(dict[i].eng);
+   }
+}
+*/
+/*
+let wordRus = [{ WordRus: "привет" }];
+let wordEng = [{ WordEng: "hello" }];
+let displayEng = () => {
+   for (let key of wordEng) {
+      console.log(key);
+   }
+}
+
+let displayRus = () => {
+   for (let key of wordRus) {
+      console.log(key);
+   }
+}
+
+
+//1 - добавить слова для перевода
+//2 - Перевести слова
+      1)  с руксского на снглийскуи
+      2) с английского на русский
+//3 - удалить слова для перевода
+//4 - посмотреть словарь
+//5 - выйти
+
+console.log("1 - добавить русское слово");
+console.log("2 - добавить английськое слово");
+console.log("3 - посмотреть слова");
+console.log("4 - выйти");
+
+let exit = false;
+
+while (!exit) {
+   let menu = +prompt("Enter");
+   switch (menu) {
+      case 1: {
+         word = prompt("вести слово на русском");
+         wordRus[wordRus.length] = { WordRus: word };
+         break;
+      }
+      case 2: {
+         word = prompt("вести слово на английском");
+         wordEng[wordEng.length] = { WordEng: word };
+         break;
+      }
+      case 3: {
+         displayRus();
+         displayEng()
+         break;
+      }
+      case 4: {
+         exit = true;
+         console.log("вы вышли")
+         break;
+      }
+   }
+}
+*/
+
+/*
+let user = { name: "kirill", age: 43 }
+for (item of Object.keys(user)) {
+   console.log(item + ": " + user[item]);
+}
+*/
+
+/*
+let user = { name: "kirill", age: 43 }
+console.log(Object.values(user)[0]);
+*/
+
+/*
+function createUser(name, age) {
+   return {
+      name: name,
+      age: age,
+      display: function () {
+         document.write(`<h1>Имя:${name} возраст:${age}</h1>`)
+      }
+   }
+}
+
+let kolya = createUser("kolya", 15);
+let egor = createUser("Egor", 16);
+let Timur = createUser("Timur", 19);
+
+kolya.display();
+egor.display();
+Timur.display();
+*/
+
+/*
+function createGon(name, age) {
+   return {
+      name: name,
+      age: age,
+      driceCar: function (car) {
+         document.write(`<h1>${name} ездит на машыне ${car.avto} ${car.year}. Стаж ${age} лет</h1>`)
+      }
+   }
+}
+
+function createCar(avto, year) {
+   return {
+      avto: avto,
+      year: year,
+   }
+}
+
+let gon = createGon("Алексей", 15);
+let car = createCar("BMW", 2007);
+gon.driceCar(car);
+
+let gon1 = createGon("Дима", 19);
+let car1 = createCar("Лексус", 2013);
+gon1.driceCar(car1);
+*/
+
+
+//let arr1 = new Array()
+//let arr = []
+
+
+/*
+function User(name, age) {
+   this.name = name;
+   this.age = age;
+   this.info = function () {
+      console.log(this.name, this.age);
+   }
+}
+
+let anton = new User("Anton", 35);
+let egor = new User("Egor", 25);
+
+let arr = [new User(prompt(), prompt())];
+console.log(arr)
+
+anton.info();
+egor.info();
+*/
+
+//Prototype
+/*
+function Avto(model, color) {
+   this.model = model;
+   this.color = color;
+   this.display = function () {
+      document.write(`${this.model} ${this.color}<br>`);
+   }
+}
+
+let car = new Avto("BMW", "green");
+
+Avto.prototype.is_polomla = false;
+
+console.log(car.is_polomla)
+car.is_polomla = true;
+console.log(car.is_polomla)
+*/
+
+/*
+function User(name) {
+   this.name = name;
+}
+
+let car = new Avto("BMW", "green");
+let egor = new User("Egor");
+
+let res = car instanceof User;
+console.log(res);
+*/
+
+/*
+let arr = []
+for (let i = 0; i < 2; i++) {
+   arr[i] = new Avto(prompt(), prompt())
+}
+
+for (item of arr) {
+   console.log(item.display())
+}
+*/
+
+
