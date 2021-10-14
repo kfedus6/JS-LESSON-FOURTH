@@ -246,76 +246,6 @@ while (!exit) {
    }
 }
 */
-
-/*
-let dict = [{ rus: "Привет", eng: "Hello" }, { rus: "Ручка", eng: "Pen" }]
-
-word = "Привет";
-
-for (let i = 0; i < dict.length; i++) {
-   if (word === dict[i].rus) {
-      console.log(dict[i].eng);
-   }
-}
-*/
-/*
-let wordRus = [{ WordRus: "привет" }];
-let wordEng = [{ WordEng: "hello" }];
-let displayEng = () => {
-   for (let key of wordEng) {
-      console.log(key);
-   }
-}
-
-let displayRus = () => {
-   for (let key of wordRus) {
-      console.log(key);
-   }
-}
-
-
-//1 - добавить слова для перевода
-//2 - Перевести слова
-      1)  с руксского на снглийскуи
-      2) с английского на русский
-//3 - удалить слова для перевода
-//4 - посмотреть словарь
-//5 - выйти
-
-console.log("1 - добавить русское слово");
-console.log("2 - добавить английськое слово");
-console.log("3 - посмотреть слова");
-console.log("4 - выйти");
-
-let exit = false;
-
-while (!exit) {
-   let menu = +prompt("Enter");
-   switch (menu) {
-      case 1: {
-         word = prompt("вести слово на русском");
-         wordRus[wordRus.length] = { WordRus: word };
-         break;
-      }
-      case 2: {
-         word = prompt("вести слово на английском");
-         wordEng[wordEng.length] = { WordEng: word };
-         break;
-      }
-      case 3: {
-         displayRus();
-         displayEng()
-         break;
-      }
-      case 4: {
-         exit = true;
-         console.log("вы вышли")
-         break;
-      }
-   }
-}
-*/
-
 /*
 let user = { name: "kirill", age: 43 }
 for (item of Object.keys(user)) {
@@ -440,5 +370,127 @@ for (item of arr) {
    console.log(item.display())
 }
 */
+/*
+let dictionary = [{ Rus: "Привет", Eng: "Hello" }, { Rus: "Ручка", Eng: "Pen" }];
 
+let translation = () => {
+   let menu_1 = +prompt("Меню");
+   if (menu_1 === 1) {
+      let wordRus = prompt("с русского на английськый");
+      for (let i = 0; i < dictionary.length; i++) {
+         if (wordRus === dictionary[i].Rus) {
+            console.log(dictionary[i].Eng);
+         }
+      }
+   } else if (menu_1 === 2) {
+      let wordEng = prompt("с английського на русское")
+      for (let k = 0; k < dictionary.length; k++) {
+         if (wordEng === dictionary[k].Eng) {
+            console.log(dictionary[k].Rus)
+         }
+      }
+   }
+}
 
+let display = () => {
+   for (let key of dictionary) {
+      console.log(`${key.Rus} - ${key.Eng}`);
+   }
+}
+
+console.log("1 - добавить слова для перевода");
+console.log("2 - Перевести слова");
+console.log("1) - с руского на ангийськый")
+console.log("2) - с ангийського на русское")
+console.log("3 - удалить слова для перевода");
+console.log("4 - посмотреть словарь");
+console.log("5 - выйти");
+
+let exit = false;
+
+while (!exit) {
+   let menu = +prompt("Головне меню");
+   switch (menu) {
+      case 1: {
+         rus = prompt("добавить русское слово");
+         eng = prompt("добавить английськое слово");
+         dictionary[dictionary.length] = { Rus: rus, Eng: eng };
+         break;
+      }
+      case 2: {
+         translation();
+         break;
+      }
+      case 3: {
+         break;
+      }
+      case 4: {
+         display();
+         break;
+      }
+      case 5: {
+         exit = true;
+         console.log("вы вышли")
+         break;
+      }
+   }
+}
+*/
+/*
+function User(name, phone) {
+   this.name = name;
+   this.phone = phone;
+}
+
+let user = [];
+function manyUser() {
+   for (let i = 0; i < 2; i++) {
+      user[i] = new User(prompt("name"), +prompt("phone"));
+   }
+
+}
+
+function display() {
+   for (let key of user) {
+      console.log(key);
+   }
+}
+
+console.log("1 - Посмотреть список контактов");
+console.log("2 - Добавить новый контакт");
+console.log("3 - Изменить номер контакта");
+console.log("4 - Выйти");
+
+let menu;
+let exit = false;
+while (!exit) {
+   menu = +prompt("Enter:")
+   switch (menu) {
+      case 1: {
+         display();
+         break;
+      }
+      case 2: {
+         manyUser();
+         break;
+      }
+      case 3: {
+         name = prompt("name");
+         for (item of user) {
+            if (item.name === name) {
+               name = prompt("new name");
+               phone = +prompt("new phone");
+               item.name = name;
+               item.phone = phone;
+            }
+         }
+         break;
+      }
+      case 4: {
+         exit = true;
+         console.log("вы вышли")
+         break;
+      }
+   }
+}
+*/
