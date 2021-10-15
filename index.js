@@ -370,7 +370,7 @@ for (item of arr) {
    console.log(item.display())
 }
 */
-/*
+// ===============ДЗ=============
 let dictionary = [{ Rus: "Привет", Eng: "Hello" }, { Rus: "Ручка", Eng: "Pen" }];
 
 let translation = () => {
@@ -435,8 +435,8 @@ while (!exit) {
       }
    }
 }
-*/
-/*
+
+
 function User(name, phone) {
    this.name = name;
    this.phone = phone;
@@ -493,4 +493,3 @@ while (!exit) {
       }
    }
 }
-*/
