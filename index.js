@@ -371,6 +371,7 @@ for (item of arr) {
 }
 */
 // ===============ДЗ=============
+/*
 let dictionary = [{ Rus: "Привет", Eng: "Hello" }, { Rus: "Ручка", Eng: "Pen" }];
 
 let translation = () => {
@@ -493,3 +494,107 @@ while (!exit) {
       }
    }
 }
+*/
+
+/*
+function User(name, age) {
+   this.name = name,
+      this.age = age;
+}
+
+User.prototype.student = false;
+User.prototype.display = function () {
+   console.log(this.name, this.age)
+}
+
+oleg = new User("Олег", 32);
+anton = new User("Антон", 32);
+
+console.log(oleg.student);
+anton.student = true;
+console.log(anton.student);
+
+oleg.display();
+anton.display();
+*/
+
+/*
+function Avto(model, color) {
+   this.model = model;
+   this.color = color;
+}
+tesla = new Avto("s", "red");
+audi = new Avto("a7", "white");
+console.log(tesla);
+console.log(audi);
+
+Avto.prototype.speed = 0;
+tesla.speed = prompt();
+audi.speed = prompt();
+console.log(tesla.speed);
+console.log(audi.speed);
+Avto.prototype.display = function () {
+   console.log(`${this.model} едить с скоростю: ${this.speed}`)
+}
+
+tesla.display();
+audi.display();
+*/
+
+//getter, setter
+/*
+function User(name, age) {
+   let _name = name;
+   let _age = age;
+   this.displayInfo = function () {
+      document.write("Имя: " + _name + "; возраст: " + _age + "<br>");
+   };
+   this.getAge = function () {
+      return _age
+   }
+   this.getName = function () {
+      return _name
+   }
+   this.setAge = function (age) {
+      _age = age
+   }
+}
+
+let anton = new User("anton", 12);
+anton.displayInfo();
+console.log(anton.getAge());
+console.log(anton.getName());
+anton.setAge(17);
+anton.displayInfo();
+*/
+
+function Tel(mc, gb, model) {
+   let _mc = mc;
+   let _gb = gb;
+   let _model = model;
+   this.display = function () {
+      console.log(`память:${_gb}, оьща память:${_mc}, модель: ${_model}`);
+   }
+   this.getMc = function () {
+      return _mc
+   };
+   this.getDg = function () {
+      return _Dg
+   };
+   this.getModel = function () {
+      return _model
+   };
+   this.setMc = function (mc) {
+      if (mc > _gb) {
+         _mc = _gb
+      } else {
+         _mc = mc;
+      }
+   }
+}
+let nokia = new Tel(15, 32, "nokia");
+nokia.display();
+nokia.setMc(17);
+nokia.display();
+
+
